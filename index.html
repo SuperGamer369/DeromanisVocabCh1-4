@@ -5,7 +5,7 @@
   <title>Vocabulary Tester</title>
   <style>
     html, body {
-      height: 150%;
+      height: 200%;
       margin: 0;
       font-family: Arial, sans-serif;
       background: #121212;
@@ -117,10 +117,10 @@
     }
 
     const chapters = {
-      '1': ['amō=love, like','dea=goddess','deus=god','et=and, even','etiam=also, even','fēmina=woman','fīlia=daughter','fīlius=son','homō=man, human being','īrātus=angry','lacrimō=weep, cry','laetus=happy','laudō=praise','līberī=children','māter=mother','multus=much, many','pater=father','pulcher=beautiful, handsome','pūniō=punish','rēgīna=queen','regō=rule','rēx=king','saepe=often','saevus=savage, cruel','sed=but','sum=be','terreō=frighten, terrify','tum=then','uxor=wife'],
-      '2': ['ad=to, towards, at','arma=arms, weapons','audāx=bold, daring','bellum=war','capiō=take, catch, capture, make (a plan)','contrā=against','corpus=body','currō=run','eō=go','flūmen=river','fortis=brave, strong','fortiter=bravely, strongly','gladius=sword','Graecus=Greek','hasta=spear','iaciō=throw','in=into, onto','ingēns=huge','inquit=he/she says/said, they say/said','interficiō=kill','maneō=remain, stay','nōn=not','per=through, along','perīculum=danger','prope=near','sagitta=arrow','silva=wood','timeō=fear, be afraid','trāns=across','vincō=conquer, win, be victorious, defeat'],
-      '3': ['ā, ab=from, away from, by','ascendō=climb','audiō=hear, listen to','auxilium=help','bonus=good','caelum=sky, heaven','celeriter=quickly','cōnspiciō=catch sight of, notice','cum=with','dē=from, down from, about','dēscendō=go down, come down','difficilis=difficult','diū=for a long time','ē, ex=from, out of, out from','equus=horse','facilis=easy','fēlīx=fortunate, happy, lucky','in=in, on','iubeō=order','magnus=big, large, great','malus=evil, bad','mare=sea','mōns=mountain','ōlim=once, some time ago','petō=make for, seek, beg/ask for','possum=can, be able','pugnō=fight','subitō=suddenly','tandem=at last, finally','terra=ground, land, country'],
-      '4': ['-ne=(introduces question)','aedificō=build','ager=field','aurum=gold','crēdō=believe, trust','crūdēlis=cruel','cūr?=why?','dō=give','dōnum=gift, present','faciō=make, do','ferō=bring, carry, bear','habeō=have, hold','īra=anger','miser=miserable, wretched, sad','nōlō=not want, refuse','nōmen=name','nōnne …?=surely ... ?','num ... ?=surely … not?','pecūnia=money','persuādeō=persuade','perterritus=terrified','pōnō=put, place, set up','quandō?=when?','quod=because','semper=always','tamen=however','templum=temple','trīstis=sad','ubi?=where?','volō=want, wish, be willing']
+      '1': ['amō = love, like','dea = goddess','deus = god','et = and, even','etiam = also, even','fēmina = woman','fīlia = daughter','fīlius = son','homō = man, human being','īrātus = angry','lacrimō = weep, cry','laetus = happy','laudō = praise','līberī = children','māter = mother','multus = much, many','pater = father','pulcher = beautiful, handsome','pūniō = punish','rēgīna = queen','regō = rule','rēx = king','saepe = often','saevus = savage, cruel','sed = but','sum = be','terreō = frighten, terrify','tum = then','uxor = wife'],
+      '2': ['ad = to, towards, at','arma = arms, weapons','audāx = bold, daring','bellum = war','capiō = take, catch, capture, make a plan','contrā = against','corpus = body','currō = run','eō = go','flūmen = river','fortis = brave, strong','fortiter = bravely, strongly','gladius = sword','Graecus = Greek','hasta = spear','iaciō = throw','in = into, onto','ingēns = huge','inquit = says, said','interficiō = kill','maneō = remain, stay','nōn = not','per = through, along','perīculum = danger','prope = near','sagitta = arrow','silva = wood','timeō = fear, be afraid','trāns = across','vincō = conquer, win, be victorious, defeat'],
+      '3': ['ā, ab = from, away from, by','ascendō = climb','audiō = hear, listen to','auxilium = help','bonus = good','caelum = sky, heaven','celeriter = quickly','cōnspiciō = catch sight of, notice','cum = with','dē = from, down from, about','dēscendō = go down, come down','difficilis = difficult','diū = for a long time','ē, ex = from, out of, out from','equus = horse','facilis = easy','fēlīx = fortunate, happy, lucky','in = in, on','iubeō = order','magnus = big, large, great','malus = evil, bad','mare = sea','mōns = mountain','ōlim = once, some time ago','petō = make for, seek, beg, ask for','possum = can, be able','pugnō = fight','subitō = suddenly','tandem = at last, finally','terra = ground, land, country'],
+      '4': ['-ne = introduces question','aedificō = build','ager = field','aurum = gold','crēdō = believe, trust','crūdēlis = cruel','cūr? = why?','dō = give','dōnum = gift, present','faciō = make, do','ferō = bring, carry, bear','habeō = have, hold','īra = anger','miser = miserable, wretched, sad','nōlō = not want, refuse','nōmen = name','nōnne …? = surely ... ?','num ... ? = surely … not?','pecūnia = money','persuādeō = persuade','perterritus = terrified','pōnō = put, place, set up','quandō? = when?','quod = because','semper = always','tamen = however','templum = temple','trīstis = sad','ubi? = where?','volō = want, wish, be willing']
     };
 
     let words = [];
@@ -138,7 +138,7 @@
       }
       words = chapters[chapter].map(line => {
         const parts = line.split('=');
-        const defs = parts[1].replace(/[\/]/g, ',').split(',').map(d => normalize(d));
+        const defs = parts[1].split(',').map(d => normalize(d.trim()));
         return { word: parts[0].trim(), definitions: defs };
       });
       document.getElementById('allAnswers').classList.add('hidden');
@@ -149,7 +149,7 @@
       const chapter = document.getElementById('chapterSelect').value;
       if (!chapters[chapter]) return;
       const container = document.getElementById('allAnswers');
-      container.innerHTML = chapters[chapter].map(line => line.replace('/', ',')).join('<br>');
+      container.innerHTML = chapters[chapter].join('<br>');
       container.classList.remove('hidden');
       container.scrollIntoView({ behavior: 'smooth' });
     }
@@ -243,4 +243,3 @@
   </script>
 </body>
 </html>
-Add initial index.html
