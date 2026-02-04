@@ -75,10 +75,10 @@
     <div id="setup">
       <p><strong>Choose Chapter</strong></p>
       <select id="chapterSelect" onchange="loadChapter()">
-        <option value="1">Chapter 1</option>
-        <option value="2">Chapter 2</option>
-        <option value="3">Chapter 3</option>
-        <option value="4">Chapter 4</option>
+        <option value="5">Chapter 5</option>
+        <option value="6">Chapter 6</option>
+        <option value="7">Chapter 7</option>
+        <option value="8">Chapter 8</option>
       </select>
 
       <p><strong>Mode</strong></p>
@@ -218,7 +218,8 @@
         if (!userAnswer) return;
       }
       total++;
-      const correct = current.definitions.some(def => normalize(userAnswer) === normalize(def) || normalize(userAnswer).includes(normalize(def)) || normalize(def).includes(normalize(userAnswer)));
+      // Only compare normalized answers, ignore punctuation
+      const correct = current.definitions.some(def => normalize(userAnswer) === normalize(def));
       if ((mode==='mc' && current.definitions.includes(userAnswer)) || (mode==='type' && correct)) {
         score++;
         document.getElementById('result').textContent = '✅ Correct!';
@@ -243,5 +244,3 @@
   </script>
 </body>
 </html>
-Add initial index.html
-
