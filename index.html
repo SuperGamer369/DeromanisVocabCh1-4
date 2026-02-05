@@ -75,10 +75,10 @@
     <div id="setup">
       <p><strong>Choose Chapter</strong></p>
       <select id="chapterSelect" onchange="loadChapter()">
-        <option value="5">Chapter 5</option>
-        <option value="6">Chapter 6</option>
-        <option value="7">Chapter 7</option>
-        <option value="8">Chapter 8</option>
+        <option value="1">Chapter 1</option>
+        <option value="2">Chapter 2</option>
+        <option value="3">Chapter 3</option>
+        <option value="4">Chapter 4</option>
       </select>
 
       <p><strong>Mode</strong></p>
@@ -117,131 +117,11 @@
     }
 
     const chapters = {
-  1: [
-    { latin: "amō", definitions: ["love", "like"] },
-    { latin: "dea", definitions: ["goddess"] },
-    { latin: "deus", definitions: ["god"] },
-    { latin: "et", definitions: ["and", "even"] },
-    { latin: "etiam", definitions: ["also", "even"] },
-    { latin: "fēmina", definitions: ["woman"] },
-    { latin: "fīlia", definitions: ["daughter"] },
-    { latin: "fīlius", definitions: ["son"] },
-    { latin: "homō", definitions: ["man", "human being"] },
-    { latin: "īrātus", definitions: ["angry"] },
-    { latin: "lacrimō", definitions: ["weep", "cry"] },
-    { latin: "laetus", definitions: ["happy"] },
-    { latin: "laudō", definitions: ["praise"] },
-    { latin: "līberī", definitions: ["children"] },
-    { latin: "māter", definitions: ["mother"] },
-    { latin: "multus", definitions: ["much", "many"] },
-    { latin: "pater", definitions: ["father"] },
-    { latin: "pulcher", definitions: ["beautiful", "handsome"] },
-    { latin: "pūniō", definitions: ["punish"] },
-    { latin: "rēgīna", definitions: ["queen"] },
-    { latin: "regō", definitions: ["rule"] },
-    { latin: "rēx", definitions: ["king"] },
-    { latin: "saepe", definitions: ["often"] },
-    { latin: "saevus", definitions: ["savage", "cruel"] },
-    { latin: "sed", definitions: ["but"] },
-    { latin: "sum", definitions: ["be"] },
-    { latin: "terreō", definitions: ["frighten", "terrify"] },
-    { latin: "tum", definitions: ["then"] },
-    { latin: "uxor", definitions: ["wife"] }
-  ],
-  2: [
-    { latin: "ad", definitions: ["to", "towards", "at"] },
-    { latin: "arma", definitions: ["arms", "weapons"] },
-    { latin: "audāx", definitions: ["bold", "daring"] },
-    { latin: "bellum", definitions: ["war"] },
-    { latin: "capiō", definitions: ["take", "catch", "capture", "make"] },
-    { latin: "contrā", definitions: ["against"] },
-    { latin: "corpus", definitions: ["body"] },
-    { latin: "currō", definitions: ["run"] },
-    { latin: "eō", definitions: ["go"] },
-    { latin: "flūmen", definitions: ["river"] },
-    { latin: "fortis", definitions: ["brave", "strong"] },
-    { latin: "fortiter", definitions: ["bravely", "strongly"] },
-    { latin: "gladius", definitions: ["sword"] },
-    { latin: "Graecus", definitions: ["Greek"] },
-    { latin: "hasta", definitions: ["spear"] },
-    { latin: "iaciō", definitions: ["throw"] },
-    { latin: "in", definitions: ["into", "onto"] },
-    { latin: "ingēns", definitions: ["huge"] },
-    { latin: "inquit", definitions: ["he says", "she says", "they say"] },
-    { latin: "interficiō", definitions: ["kill"] },
-    { latin: "maneō", definitions: ["remain", "stay"] },
-    { latin: "nōn", definitions: ["not"] },
-    { latin: "per", definitions: ["through", "along"] },
-    { latin: "perīculum", definitions: ["danger"] },
-    { latin: "prope", definitions: ["near"] },
-    { latin: "sagitta", definitions: ["arrow"] },
-    { latin: "silva", definitions: ["wood"] },
-    { latin: "timeō", definitions: ["fear", "be afraid"] },
-    { latin: "trāns", definitions: ["across"] },
-    { latin: "vincō", definitions: ["conquer", "win", "defeat"] }
-  ],
-  3: [
-    { latin: "ā", definitions: ["from", "away from", "by"] },
-    { latin: "ascendō", definitions: ["climb"] },
-    { latin: "audiō", definitions: ["hear", "listen"] },
-    { latin: "auxilium", definitions: ["help"] },
-    { latin: "bonus", definitions: ["good"] },
-    { latin: "caelum", definitions: ["sky", "heaven"] },
-    { latin: "celeriter", definitions: ["quickly"] },
-    { latin: "cōnspiciō", definitions: ["notice", "catch sight of"] },
-    { latin: "cum", definitions: ["with"] },
-    { latin: "dē", definitions: ["from", "down from", "about"] },
-    { latin: "dēscendō", definitions: ["go down", "come down"] },
-    { latin: "difficilis", definitions: ["difficult"] },
-    { latin: "diū", definitions: ["for a long time"] },
-    { latin: "ē", definitions: ["out of", "from"] },
-    { latin: "equus", definitions: ["horse"] },
-    { latin: "facilis", definitions: ["easy"] },
-    { latin: "fēlīx", definitions: ["fortunate", "happy"] },
-    { latin: "in", definitions: ["in", "on"] },
-    { latin: "iubeō", definitions: ["order"] },
-    { latin: "magnus", definitions: ["big", "great"] },
-    { latin: "malus", definitions: ["bad", "evil"] },
-    { latin: "mare", definitions: ["sea"] },
-    { latin: "mōns", definitions: ["mountain"] },
-    { latin: "ōlim", definitions: ["once"] },
-    { latin: "petō", definitions: ["seek", "ask", "beg"] },
-    { latin: "possum", definitions: ["can", "be able"] },
-    { latin: "pugnō", definitions: ["fight"] },
-    { latin: "subitō", definitions: ["suddenly"] },
-    { latin: "tandem", definitions: ["finally"] },
-    { latin: "terra", definitions: ["land", "ground"] }
-  ],
-  4: [
-    { latin: "aedificō", definitions: ["build"] },
-    { latin: "ager", definitions: ["field"] },
-    { latin: "aurum", definitions: ["gold"] },
-    { latin: "crēdō", definitions: ["believe", "trust"] },
-    { latin: "crūdēlis", definitions: ["cruel"] },
-    { latin: "cūr", definitions: ["why"] },
-    { latin: "dō", definitions: ["give"] },
-    { latin: "dōnum", definitions: ["gift", "present"] },
-    { latin: "faciō", definitions: ["make", "do"] },
-    { latin: "ferō", definitions: ["bring", "carry"] },
-    { latin: "habeō", definitions: ["have", "hold"] },
-    { latin: "īra", definitions: ["anger"] },
-    { latin: "miser", definitions: ["miserable", "sad"] },
-    { latin: "nōlō", definitions: ["not want", "refuse"] },
-    { latin: "nōmen", definitions: ["name"] },
-    { latin: "pecūnia", definitions: ["money"] },
-    { latin: "persuādeō", definitions: ["persuade"] },
-    { latin: "perterritus", definitions: ["terrified"] },
-    { latin: "pōnō", definitions: ["put", "place"] },
-    { latin: "quandō", definitions: ["when"] },
-    { latin: "quod", definitions: ["because"] },
-    { latin: "semper", definitions: ["always"] },
-    { latin: "tamen", definitions: ["however"] },
-    { latin: "templum", definitions: ["temple"] },
-    { latin: "trīstis", definitions: ["sad"] },
-    { latin: "ubi", definitions: ["where"] },
-    { latin: "volō", definitions: ["want", "wish"] }
-  ]
-};
+      '1': ['amō = love, like','dea = goddess','deus = god','et = and, even','etiam = also, even','fēmina = woman','fīlia = daughter','fīlius = son','homō = man, human being','īrātus = angry','lacrimō = weep, cry','laetus = happy','laudō = praise','līberī = children','māter = mother','multus = much, many','pater = father','pulcher = beautiful, handsome','pūniō = punish','rēgīna = queen','regō = rule','rēx = king','saepe = often','saevus = savage, cruel','sed = but','sum = be','terreō = frighten, terrify','tum = then','uxor = wife'],
+      '2': ['ad = to, towards, at','arma = arms, weapons','audāx = bold, daring','bellum = war','capiō = take, catch, capture, make a plan','contrā = against','corpus = body','currō = run','eō = go','flūmen = river','fortis = brave, strong','fortiter = bravely, strongly','gladius = sword','Graecus = Greek','hasta = spear','iaciō = throw','in = into, onto','ingēns = huge','inquit = he or she says, they say','interficiō = kill','maneō = remain, stay','nōn = not','per = through, along','perīculum = danger','prope = near','sagitta = arrow','silva = wood','timeō = fear, be afraid','trāns = across','vincō = conquer, win, defeat'],
+      '3': ['ā, ab = from, away from, by','ascendō = climb','audiō = hear, listen to','auxilium = help','bonus = good','caelum = sky, heaven','celeriter = quickly','cōnspiciō = catch sight of, notice','cum = with','dē = from, down from, about','dēscendō = go down, come down','difficilis = difficult','diū = for a long time','ē, ex = from, out of','equus = horse','facilis = easy','fēlīx = fortunate, happy, lucky','in = in, on','iubeō = order','magnus = big, large, great','malus = evil, bad','mare = sea','mōns = mountain','ōlim = once, some time ago','petō = make for, seek, ask for','possum = can, be able','pugnō = fight','subitō = suddenly','tandem = at last, finally','terra = ground, land, country'],
+      '4': ['-ne = introduces a question','aedificō = build','ager = field','aurum = gold','crēdō = believe, trust','crūdēlis = cruel','cūr = why','dō = give','dōnum = gift, present','faciō = make, do','ferō = bring, carry, bear','habeō = have, hold','īra = anger','miser = miserable, wretched, sad','nōlō = not want, refuse','nōmen = name','nōnne = surely','num = surely not','pecūnia = money','persuādeō = persuade','perterritus = terrified','pōnō = put, place, set up','quandō = when','quod = because','semper = always','tamen = however','templum = temple','trīstis = sad','ubi = where','volō = want, wish, be willing']
+    };
 
     let words = [];
     let current = {};
@@ -338,7 +218,6 @@
         if (!userAnswer) return;
       }
       total++;
-      // Only compare normalized answers, ignore punctuation
       const correct = current.definitions.some(def => normalize(userAnswer) === normalize(def));
       if ((mode==='mc' && current.definitions.includes(userAnswer)) || (mode==='type' && correct)) {
         score++;
